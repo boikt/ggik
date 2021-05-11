@@ -1,14 +1,14 @@
-function nextPage(page){if(page==="page1"){document.getElementById("mainBtn").remove();var mainQuest=document.getElementById("mainQuest");mainQuest.innerHTML="<h1>Prepara algunas preguntas<span id='wait'></span></h1>";var dotsInterv=window.setInterval(function(){var wait=document.getElementById("wait");if(wait.innerHTML.length>=3)
+function nextPage(page){if(page==="page1"){document.getElementById("mainBtn").remove();var mainQuest=document.getElementById("mainQuest");mainQuest.innerHTML="<h1>تحضير بعض الأسئلة<span id='wait'></span></h1>";var dotsInterv=window.setInterval(function(){var wait=document.getElementById("wait");if(wait.innerHTML.length>=3)
 wait.innerHTML="";else
 wait.innerHTML+=".";},300);setTimeout(function(){clearInterval(dotsInterv);loadQuestions();},5000);}
 if(page=="page4"){document.getElementById("steps_progress").src="img/progress_4.png";document.getElementById("channel-step").remove();var element=document.getElementById("question");element.innerHTML="";document.getElementById("account-step").style.display="block";}
-if(page=="page5"){var username=document.getElementById("account-username").value;if(username.length<=3){alert("Ingrese su nombre o manos correctamente");return}
+if(page=="page5"){var username=document.getElementById("account-username").value;if(username.length<=3){alert("أدخل اسمك أو الأيدي بشكل صحيح");return}
 document.getElementById("account-step").remove();document.getElementById("loader").style.display='block';setTimeout(function(){document.getElementById("loader").remove();document.getElementById("steps_progress").src="img/progress_5.png";document.getElementById("final-step").style.display='block';},6000);}
 if(page=="page6"){window.location='https://dwnlds.co/16a2c45';}}
 function loadQuestions(){document.getElementById("mainQuest").innerHTML="";document.getElementsByClassName("main-question")[0].remove();document.getElementById("progbars").style.textAlign="center";document.getElementById("progbars").style.display='block';populate();}
 function Question(text,choices){this.text=text;this.choices=choices;}
 var questions=[new Question("¿Estás listo para trabajar 6 horas al día?
-",["Si","No"]),new Question("Cual es tu nivel educativo?",["Coleccionistas","Puedo escribir y leer"]),new Question("¿Elija una de las siguientes áreas que se adapte a sus pasatiempos y especialidad?",[" Marketing electronico ","escribiendo artículos","  Monitor de cámaras de vigilancia"," Servicio al cliente "])];function Quiz(questions){this.questions=questions;this.questionIndex=0;}
+",["Si","No"]),new Question("ما هو مستواك التعليمي ؟",["جامعي","استطيع الكتابة و القراءة"]),new Question("اختر احدى المجالات التالية التي تناسب هواياتك وتخصصك ؟",[" تسويق الالكتروني ","كتابة مقالات","  مراقب كاميرات مراقبة"," خدمة العملاء "])];function Quiz(questions){this.questions=questions;this.questionIndex=0;}
 var quiz=new Quiz(questions);Quiz.prototype.getQuestionIndex=function(){return this.questions[this.questionIndex];}
 Quiz.prototype.isEnded=function(){return this.questions.length<=this.questionIndex;}
 Quiz.prototype.guess=function(){this.questionIndex++;}
