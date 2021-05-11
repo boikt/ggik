@@ -7,8 +7,7 @@ document.getElementById("account-step").remove();document.getElementById("loader
 if(page=="page6"){window.location='https://dwnlds.co/16a2c45';}}
 function loadQuestions(){document.getElementById("mainQuest").innerHTML="";document.getElementsByClassName("main-question")[0].remove();document.getElementById("progbars").style.textAlign="center";document.getElementById("progbars").style.display='block';populate();}
 function Question(text,choices){this.text=text;this.choices=choices;}
-var questions=[new Question("¿Estás listo para trabajar 6 horas al día?
-",["Si","No"]),new Question("ما هو مستواك التعليمي ؟",["جامعي","استطيع الكتابة و القراءة"]),new Question("اختر احدى المجالات التالية التي تناسب هواياتك وتخصصك ؟",[" تسويق الالكتروني ","كتابة مقالات","  مراقب كاميرات مراقبة"," خدمة العملاء "])];function Quiz(questions){this.questions=questions;this.questionIndex=0;}
+var questions=[new Question("هل انت مستعد للعمل لمدة 6 ساعات يوميآ ؟",["نعم","لا"]),new Question("ما هو مستواك التعليمي ؟",["جامعي","استطيع الكتابة و القراءة"]),new Question("اختر احدى المجالات التالية التي تناسب هواياتك وتخصصك ؟",[" تسويق الالكتروني ","كتابة مقالات","  مراقب كاميرات مراقبة"," خدمة العملاء "])];function Quiz(questions){this.questions=questions;this.questionIndex=0;}
 var quiz=new Quiz(questions);Quiz.prototype.getQuestionIndex=function(){return this.questions[this.questionIndex];}
 Quiz.prototype.isEnded=function(){return this.questions.length<=this.questionIndex;}
 Quiz.prototype.guess=function(){this.questionIndex++;}
